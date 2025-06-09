@@ -1,0 +1,162 @@
+.rice-detail-container {
+    max-width: 1200px;
+    margin: 90px auto 40px;
+    padding: 0 20px;
+}
+
+.rice-detail-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.rice-detail-header h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', serif;
+}
+
+.rice-types {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.type-tag {
+    background-color: #e1f5fe;
+    color: #0288d1;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+.rice-detail-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.rice-image-container {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.rice-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.rice-image-container:hover img {
+    transform: scale(1.05);
+}
+
+.rice-info {
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.rice-info h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-family: 'Times New Roman', serif;
+}
+
+.rice-description {
+    line-height: 1.8;
+    color: #34495e;
+    font-size: 18px;
+    text-align: justify;
+}
+
+.content-html {
+    padding: 20px;
+    line-height: 1.6;
+    color: #2c3e50;
+    font-family: 'Times New Roman', serif !important;
+}
+
+.content-html h1,
+.content-html h2,
+.content-html h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    color: #2c3e50;
+}
+
+.content-html p {
+    margin-bottom: 1em;
+}
+
+.content-html img {
+    max-width: 100%;
+    height: auto;
+    margin: 1em 0;
+    border-radius: 8px;
+}
+
+.content-html ul,
+.content-html ol {
+    padding-left: 2em;
+    margin-bottom: 1em;
+}
+
+.content-html li {
+    margin-bottom: 0.5em;
+}
+
+.content-html table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+.content-html th,
+.content-html td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.content-html th {
+    background-color: #f5f5f5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .rice-detail-content {
+        grid-template-columns: 1fr;
+    }
+
+    .rice-detail-header h1 {
+        font-size: 2em;
+    }
+
+    .rice-info {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rice-detail-container {
+        margin-top: 70px;
+        padding: 0 15px;
+    }
+
+    .rice-detail-header h1 {
+        font-size: 1.8em;
+    }
+
+    .type-tag {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+}

@@ -1,0 +1,322 @@
+/* Main Layout */
+.cultivation-page {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cultivation-container {
+  flex: 1;
+  margin-top: 70px;
+  width: 75vw;
+  padding: 40px 20px;
+}
+
+.page-title {
+  text-align: center;
+  color: #0f52ba;
+  font-family: 'Times New Roman', serif;
+  font-size: 32px;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.table-of-contents {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.table-of-contents h2 {
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.table-of-contents ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.table-of-contents li {
+    width: 100%;
+}
+
+.toc-link {
+    width: 100%;
+    padding: 12px 15px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    color: #4a5568;
+    font-size: 1rem;
+    text-align: left;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toc-link:hover {
+  background: #6bae67;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(107, 174, 103, 0.2);
+}
+
+/* List Layout */
+.cultivation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Card Styles */
+.cultivation-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cultivation-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cultivation-header {
+  background: rgb(55, 147, 115);
+  padding: 16px 20px;
+  position: relative;
+}
+
+.cultivation-header:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #e0aeae 0%, #f8fafc 100%);
+}
+
+.cultivation-header h3 {
+  color: #fff;
+  font-family: 'Times New Roman', serif;
+  margin: 0;
+  font-size: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cultivation-content {
+  padding: 24px;
+}
+
+.cultivation-description {
+  color: #334155;
+  line-height: 1.8;
+  font-family: 'Times New Roman', serif;
+  font-size: 16px;
+}
+
+/* Content Elements Styling */
+.cultivation-description img {
+  max-width: 100%;
+  height: auto;
+  /* margin: 20px 0; */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cultivation-description ul,
+.cultivation-description ol {
+  margin: 16px 0 16px 24px;
+  color: #334155;
+}
+
+.cultivation-description li {
+  margin-bottom: 8px;
+}
+
+.cultivation-description h1,
+.cultivation-description h2,
+.cultivation-description h3,
+.cultivation-description h4 {
+  color: #0f52ba;
+  margin: 28px 0 16px;
+  font-family: 'Times New Roman', serif;
+  line-height: 1.4;
+}
+
+.cultivation-description p {
+  margin-bottom: 16px;
+}
+
+/* Loading States */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 70px);
+  margin-top: 70px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #e0aeae;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error State */
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+  margin-top: 70px;
+  color: #dc2626;
+  font-family: 'Times New Roman', serif;
+  font-size: 18px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+
+@media (max-width: 768px) {
+  .cultivation-container {
+    width: 95vw;
+    padding: 15px;
+    margin-top: 60px;
+  }
+
+  .page-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+  }
+
+  .page-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #6bae67 0%, #e0aeae 100%);
+    border-radius: 2px;
+  }
+
+  .cultivation-list {
+    gap: 16px;
+  }
+
+  .cultivation-card {
+    margin: 0 0 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .cultivation-header {
+    padding: 12px 15px;
+  }
+
+  .cultivation-header h3 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .cultivation-content {
+    padding: 15px;
+  }
+
+  .cultivation-description {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* Content elements styling for mobile */
+  .cultivation-description img {
+    margin: 12px 0;
+    border-radius: 6px;
+  }
+
+  .cultivation-description h1 { font-size: 20px; margin: 20px 0 12px; }
+  .cultivation-description h2 { font-size: 18px; margin: 18px 0 10px; }
+  .cultivation-description h3 { font-size: 16px; margin: 16px 0 8px; }
+  .cultivation-description h4 { font-size: 15px; margin: 14px 0 8px; }
+
+  .cultivation-description ul,
+  .cultivation-description ol {
+    margin: 12px 0 12px 20px;
+  }
+
+  .cultivation-description li {
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+
+  .cultivation-description p {
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+
+  /* Table responsiveness */
+  .cultivation-description table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .cultivation-description td,
+  .cultivation-description th {
+    padding: 8px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  /* Loading state adjustments */
+  .loading-container {
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+  }
+
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border-width: 4px;
+  }
+
+  /* Error state adjustments */
+  .error-container {
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+    font-size: 16px;
+    padding: 0 15px;
+  }
+}

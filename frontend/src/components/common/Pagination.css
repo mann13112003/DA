@@ -1,0 +1,38 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .pagination button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  .page-btn.active {
+  background-color: #469d85;
+  color: white;
+  border-color: #9bdab8;
+}
+  
+  /* ✅ Responsive */
+  @media (max-width: 500px) {
+    .pagination button {
+      padding: 6px 8px;
+      font-size: 12px;
+    }
+  
+    .pagination {
+      gap: 4px;
+    }
+  }
+  

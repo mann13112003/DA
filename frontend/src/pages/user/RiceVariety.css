@@ -1,0 +1,280 @@
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.rice-variety-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.main-content {
+    flex: 1 0 auto; /* Thay đổi này */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px; 
+}
+
+.rice-variety-container {
+    width: 75vw;
+    max-width: 1200px;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+}
+
+.search-bar {
+    display: flex;
+    top: 70px;
+    /* justify-content: center; */
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-left: 15px;
+    width: 100%;
+    max-width: 700px; 
+    font-family: 'Times New Roman', serif;
+    padding: 10px 0;
+    z-index: 10;
+}
+
+.search-bar input[type="text"],
+.search-bar select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 60%; 
+    font-family: 'Times New Roman', serif;
+}
+
+.search-bar select {
+    width: 30%;
+}
+
+.search-bar button {
+    width: 20%;
+    padding: 5px 10px;
+    background-color: #3fdfa7;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #3fbc43;
+}
+
+.rice-variety-list {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.card-rice {
+    width: 100%;
+    max-width: 350px; 
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 450px; 
+    
+}
+
+.card-rice:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card-image {
+    width: 100% !important;
+    height: 216px !important; 
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', serif;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.tags {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-bottom: 12px;
+    font-family: 'Times New Roman', serif;
+}
+
+.card-description {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 15px;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.5;
+    font-family: 'Times New Roman', serif;
+}
+
+.card-button {
+    text-decoration: none;
+    color: #27ae60;
+    font-size: 15px;
+    align-self: flex-start;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease;
+    font-family: 'Times New Roman', serif;
+}
+
+.card-button:hover {
+    color: #6492e1;
+}
+
+.card-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #27ae60;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.card-button:hover::after {
+    transform: scaleX(1);
+}
+
+
+
+@media (max-width: 768px) {
+    .rice-variety-container {
+        width: 95vw;
+        margin-top: 60px;
+        align-items: center;
+        overflow: hidden;
+        
+    }
+
+    /* Search bar optimization for mobile */
+    .search-bar {
+        flex-direction: column;
+        align-items: center;  
+        justify-content: center;
+        gap: 15px;
+        margin: 10px 0 20px;
+        padding: 155px;
+        width: 990%;
+        max-width: 90%;
+        margin-left: 0;
+        margin-right: 15px;
+    }
+
+    .search-bar input[type="text"],
+    .search-bar select {
+        width: 100%;
+        padding: 12px;
+        font-size: 15px;
+        height: 45px;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    .search-bar select {
+        appearance: none;  /* Thêm dòng này */
+        -webkit-appearance: none;  /* Thêm dòng này */
+        -moz-appearance: none;  /* Thêm dòng này */
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 1em;
+        padding-right: 40px;  /* Thêm padding cho icon */
+    }
+
+    .search-bar button {
+        width: 100%;
+        padding: 12px;
+        font-size: 15px;
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* Card list adjustments */
+    .rice-variety-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .card-rice {
+        max-width: 100%;
+        height: auto;
+        min-height: 420px;
+    }
+
+    .card-image {
+        height: 180px !important;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 18px;
+        -webkit-line-clamp: 2;
+    }
+
+    .tags {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .card-description {
+        font-size: 14px;
+        -webkit-line-clamp: 3;
+        margin-bottom: 12px;
+    }
+
+    .card-button {
+        font-size: 14px;
+        padding: 6px 0;
+    }
+}

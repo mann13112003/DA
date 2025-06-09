@@ -1,0 +1,229 @@
+
+.user-management {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.content {
+  margin-left: 17%;
+  flex-grow: 1;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #f8fafc;
+}
+
+.content h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Times New Roman', serif;
+  font-size: 28px;
+  color: #0f172a;
+}
+
+/* === User Form === */
+.user-form {
+  /* background: white; */
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.user-form h3 {
+  font-family: 'Times New Roman', serif;
+  font-size: 22px;
+  color: #0f52ba;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Form Layout */
+.form-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 280px;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #334155;
+  font-family: 'Times New Roman', serif;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #595a5c;
+  transition: border-color 0.2s;
+  font-family: 'Times New Roman', serif;
+}
+
+.form-group select[name="role"] {
+  width: 378px;
+  min-width: 150px;
+  padding-right: 30px; 
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #db983b;
+}
+
+/* Buttons */
+.form-actions {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.form-actions button {
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: 'Times New Roman', serif;
+}
+
+.submit-btn {
+  background-color: #facc15;
+  border: none;
+}
+
+.submit-btn:hover {
+  background-color: #eab308;
+}
+
+.cancel-btn {
+  background-color: #e2e8f0;
+  border: none;
+}
+
+.cancel-btn:hover {
+  background-color: #cbd5e1;
+}
+
+/* === User List Table === */
+.user-list {
+  /* background: white; */
+  padding: 20px;
+  /* border-radius: 8px; */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.user-list h3 {
+  font-family: 'Times New Roman', serif;
+  font-size: 22px;
+  color: #0f52ba;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.user-list table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: 'Times New Roman', serif;
+  table-layout: fixed;
+}
+
+/* Column widths */
+.user-list th:nth-child(1),
+.user-list td:nth-child(1) {
+  width: 10%;  /* STT */
+}
+
+.user-list th:nth-child(2),
+.user-list td:nth-child(2) {
+  width: 25%;  /* Email */
+}
+
+.user-list th:nth-child(3),
+.user-list td:nth-child(3) {
+  width: 25%;  /* Tên người dùng */
+}
+
+.user-list th:nth-child(4),
+.user-list td:nth-child(4) {
+  width: 20%;  /* Vai trò */
+}
+
+.user-list th:nth-child(5),
+.user-list td:nth-child(5) {
+  width: 20%;  /* Thao tác */
+}
+
+.user-list th,
+.user-list td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+.user-list th {
+  background-color: #e0aeae;
+  color: white;
+  font-weight: 500;
+  padding: 12px;
+}
+
+.user-list tr:nth-child(even) {
+  background-color: #f4edef;
+}
+
+.user-list tr:hover {
+  background-color: #ebe2e2;
+}
+
+/* Action buttons */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 16px;
+  color: #666;
+}
+
+.edit-btn:hover {
+  color: #2196F3;
+}
+
+.delete-btn:hover {
+  color: #f44336;
+}
+
+/* Error message */
+.error-text {
+  color: #e11d48;
+  text-align: center;
+  margin-bottom: 12px;
+}
+

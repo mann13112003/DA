@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Times New Roman', serif;
+}
+.navbar {
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    background: white; 
+    z-index: 1000; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}   
+.logo a{
+    display: flex;         
+    align-items: center;   
+    gap: 1px;               
+    cursor: pointer;
+}
+.logo img{
+    width: 50px;
+    height: auto;
+}
+.logo p {
+    font-weight: 600;
+    font-size: 20px;
+    color: green;
+    font-family: 'Times New Roman', serif;
+}
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 70px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: black;
+    /* font-weight: 600; */
+    font-size: 16px;
+    font-family: 'Times New Roman', serif;
+    position: relative;
+    padding-bottom: 5px;
+}
+.nav-links li a:hover{
+    color:  #2ecc71;
+}
+.nav-links li a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color:  #2ecc71;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+.nav-links li a:hover::after{
+    transform: scaleX(1);
+}
+.nav-links .active{
+    color: #2ecc71;
+}
+.nav-links .active::after{
+    transform: scaleX(1);
+}
+.log_in{
+    text-decoration: none;
+    color: rgb(86, 111, 112);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    font-family: 'Times New Roman', serif;
+    font-size: 20px;
+}
+.log_in:hover{
+    color:  #2ecc71;
+}
+.log_in::after{
+    content: "→";
+    color: rgb(86, 111, 112);
+    font-size: 20px;
+    margin-left: 5px;
+}
+.user-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-user {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: -10px;
+    transition: background 0.3s;
+    span{
+        font-family: 'Times New Roman', serif;
+        font-size: 18px;
+    }
+  }
+  
+.profile-user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+.profile-user:hover {
+    color: #550bf5;
+  }
+
+.logout-icon {
+    margin-left: 15px;
+    cursor: pointer;
+    color: rgb(248, 166, 166);
+    font-size: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.logout-icon:hover {
+    color: rgb(246, 65, 65);
+}
+
+.fabar {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: rgb(86, 111, 112);
+    margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .nav-links,
+    .user-section {
+        display: none;
+    }
+    .fabar {
+        display: block;
+    }
+    .logo p {
+        font-size: 18px;
+    }
+}
+
+/* SIDEBAR */
+.sidebar-toggle {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -260px;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+    z-index: 1500;
+    padding: 20px;
+    transition: left 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-toggle.open {
+    left: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-header p {
+    color: black;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: 'Times New Roman', serif;
+}
+
+.close-btn {
+    font-size: 24px;
+    cursor: pointer;
+    color: rgb(86, 111, 112);
+    transition: color 0.2s;
+}
+.close-btn:hover {
+    color: red;
+}
+.sidebar-toggle ul {
+    list-style: none;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-toggle ul li a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 18px;
+    color: black;
+    font-family: 'Times New Roman', serif;
+}
+
+.sidebar-user {
+    margin-top: auto;
+    font-weight: 00;
+    font-size: 16px;
+    color: black;
+    font-family: 'Times New Roman', serif;
+}
+
+.sidebar-user a {
+    text-decoration: none;
+    color: #2ecc71;
+}
+
+/* Overlay khi mở sidebar */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 1400;
+}
