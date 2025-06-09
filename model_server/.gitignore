@@ -1,0 +1,2 @@
+model_server/saved_models/*.pth
+.env

@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+numpy
+pillow
+torch
+torchvision
+timm
+python-multipart
+gdown
+python-dotenv
