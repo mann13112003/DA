@@ -82,8 +82,8 @@ let deleteUserService = async (userId) => {
 };
 
 let createRiceService = async (riceData, files) => {
-    // console.log(riceData);
-    // console.log(files);
+    console.log(riceData);
+    console.log(files);
 
     let existingRice = await db.RiceVariety.findOne({
         where: { name: riceData.name }
@@ -98,13 +98,28 @@ let createRiceService = async (riceData, files) => {
     let imageFileId = '';
     if (files && files.image) {
         let file = files.image;
-        let uploadRes = await imageKit.upload({
-            file: file.data,
-            fileName: file.name,
-            folder: '/rice',
-        });
-        imageUrl = uploadRes.url;
-        imageFileId = uploadRes.fileId;
+        // let uploadRes = await imageKit.upload({
+        //     file: file.data,
+        //     fileName: file.name,
+        //     folder: '/rice',
+        // });
+        try {
+            let uploadRes = await imageKit.upload({
+                file: file.data,
+                fileName: file.name,
+                folder: '/rice',
+            });
+            imageUrl = uploadRes.url;
+            imageFileId = uploadRes.fileId;
+        } catch (err) {
+            console.error("ImageKit upload error:", err);
+            return {
+                errCode: 2,
+                errMessage: "Upload ảnh thất bại",
+            };
+        }
+        // imageUrl = uploadRes.url;
+        // imageFileId = uploadRes.fileId;
     }
 
     let newRice = await db.RiceVariety.create({
