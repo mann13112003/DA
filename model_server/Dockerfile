@@ -9,6 +9,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy source code
 COPY . .
+COPY saved_models/ saved_models/
 
 # Expose the port
 EXPOSE 8000
