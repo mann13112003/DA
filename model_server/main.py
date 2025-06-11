@@ -15,6 +15,8 @@ load_dotenv()
 app = FastAPI()
 
 origins = [
+    "http://103.101.163.187",
+    "http://103.101.163.187:80",
     "http://localhost",
     "http://localhost:3000",
     "http://localhost:5173",
